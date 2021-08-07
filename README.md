@@ -1,24 +1,56 @@
 # cpbitmap-to-png
-Convert cpbitmap file to png.
+
+A CLI to convert cpbitmap image file to png format.
+
+> cpbitmap-to-png is a Command Line Interface tools to convert cpbitmap image file to png file.
+
+
+### Installing
+
+```node
+$ npm install -g cpbitmap-to-png
+```
+
+Create a global symlink for a dependency.
+
+```node
+npm link
+```
+
+### How to use
+
+```
+  Usage: cpbitmap-to-png input.cpbitmap output.png
+
+  Example: cpbitmap-to-png LockBackground.cpbitmap lock.png
+```
 
 ## Usage for converting Home and Lock screen images from iOS device backup
 
-1. Perform ios backup using Itunes without encryption enabled or other comptable software.
-2. Dump backup content using imobax in a direcrory (https://github.com/Siguza/imobax/) 
-3. Locate /HomeDomain/Library/SpringBoard/ direcrory in the backup direcrory and copy OriginalHomeBackground.cpbitmap, HomeBackground.cpbitmap and LockBackground.cpbitmap files.
+1. Perform iOS device backup using Itunes without encryption enabled or other compatible software.
+2. Extracted backup content using imobax in a direcrory (https://github.com/Siguza/imobax/).
+3. Locate /HomeDomain/Library/SpringBoard/ direcrory in the extracted backup direcrory and copy OriginalHomeBackground.cpbitmap, HomeBackground.cpbitmap and LockBackground.cpbitmap files.
 
 Then finally convert to PNG.
 
 ```js
-node cli.js OriginalHomeBackground.cpbitmap home-original.png
-node cli.js HomeBackground.cpbitmap home.png
-node cli.js LockBackground.cpbitmap lock.png
+cpbitmap-to-png OriginalHomeBackground.cpbitmap home-original.png
+cpbitmap-to-png HomeBackground.cpbitmap home.png
+cpbitmap-to-png LockBackground.cpbitmap lock.png
 ```
 
-## Author
+## Licence
 
-Original source from stackoverflow anwser https://stackoverflow.com/a/48158807/1293612
+## __*Author*__
 
-## Licence 
+[**Harold Thetiot**](https://github.com/hthetiot)
 
-MIT
+Original source from dr15 user on stackoverflow [How can I convert the .cpbitmap images to .png or common images type ?](https://stackoverflow.com/a/48158807/1293612).
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

@@ -1,15 +1,35 @@
 {
   "name": "cpbitmap-to-png",
   "version": "1.0.0",
-  "description": "Convert cpbitmap file to png (source: https://stackoverflow.com/a/48158807/1293612)",
-  "main": "cli.js",
+  "description": "A CLI to convert cpbitmap image file to png format.",
+  "author": "Harold Thetiot <hthetiot@gmail.com> (https://github.com/hthetiot)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hthetiot/cpbitmap-to-png/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hthetiot/cpbitmap-to-png.git"
+  },
+  "homepage": "https://github.com/hthetiot/cpbitmap-to-png#readme",
+  "keywords": [
+    "cpbitmap",
+    "ios",
+    "png"
+  ],
+  "main": "cli/main.js",
+  "preferGlobal": true,
+  "bin": {
+    "cpbitmap-to-png": "./cli/main.js"
+  },
   "dependencies": {
     "jimp": "^0.16.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "eslint": "^7.32.0"
   },
-  "author": "dr15",
-  "license": "MIT"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  }
 }
