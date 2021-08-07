@@ -1,7 +1,7 @@
 # cpbitmap-to-png
 Convert cpbitmap file to png.
 
-## Usage for converting Home and Lock screen images from iOS device. 
+## Usage for converting Home and Lock screen images from iOS device backup
 
 1. Perform ios backup using Itunes without encryption enabled or other comptable software.
 2. Dump backup content using imobax in a direcrory (https://github.com/Siguza/imobax/) 
