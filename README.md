@@ -12,9 +12,8 @@ Then finally convert to PNG.
 ```js
 node cli.js OriginalHomeBackground.cpbitmap home-original.png
 node cli.js HomeBackground.cpbitmap home.png
-node cli.js LockBackground.cpbitmap home.png        
+node cli.js LockBackground.cpbitmap lock.png
 ```
-> node cli.js HomeBackground.cpbitmap home.png
 
 ## Author
 
