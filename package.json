@@ -1,0 +1,15 @@
+{
+  "name": "cpbitmap-to-png",
+  "version": "1.0.0",
+  "description": "Convert cpbitmap file to png (source: https://stackoverflow.com/a/48158807/1293612)",
+  "main": "cli.js",
+  "dependencies": {
+    "jimp": "^0.16.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dr15",
+  "license": "MIT"
+}
