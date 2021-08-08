@@ -11,7 +11,7 @@ A CLI to convert cpbitmap image file to png format.
 $ npm install -g cpbitmap-to-png
 ```
 
-Create a global symlink for a dependency.
+Optionally, create a global symlink for a dependency.
 
 ```node
 npm link
@@ -28,24 +28,22 @@ npm link
 ## Usage for converting Home and Lock screen images from iOS device backup
 
 1. Perform iOS device backup using Itunes without encryption enabled or other compatible software.
-2. Extracted backup content using imobax in a direcrory (https://github.com/Siguza/imobax/).
-3. Locate /HomeDomain/Library/SpringBoard/ direcrory in the extracted backup direcrory and copy OriginalHomeBackground.cpbitmap, HomeBackground.cpbitmap and LockBackground.cpbitmap files.
+2. Extracted backup content using [imobax](https://github.com/Siguza/imobax/) in a direcrory or other software.
+3. Locate `/HomeDomain/Library/SpringBoard/` direcrory in the extracted backup direcrory and copy `OriginalHomeBackground.cpbitmap`, `HomeBackground.cpbitmap` and `LockBackground.cpbitmap` files.
 
-Then finally convert to PNG.
+Finally convert cpbitmap files to PNG images.
 
-```js
+```bash
 cpbitmap-to-png OriginalHomeBackground.cpbitmap home-original.png
 cpbitmap-to-png HomeBackground.cpbitmap home.png
 cpbitmap-to-png LockBackground.cpbitmap lock.png
 ```
 
-## Licence
-
 ## __*Author*__
 
 [**Harold Thetiot**](https://github.com/hthetiot)
 
-Original source from dr15 user on stackoverflow [How can I convert the .cpbitmap images to .png or common images type ?](https://stackoverflow.com/a/48158807/1293612).
+Original source from `dr15` user on stackoverflow [How can I convert the .cpbitmap images to .png or common images type ?](https://stackoverflow.com/a/48158807/1293612).
 
 ## Contributing
 
