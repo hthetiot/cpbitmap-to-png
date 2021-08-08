@@ -39,15 +39,16 @@ cpbitmap-to-png HomeBackground.cpbitmap home.png
 cpbitmap-to-png LockBackground.cpbitmap lock.png
 ```
 
-## __*Author*__
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Authors
 
 [**Harold Thetiot**](https://github.com/hthetiot)
 
 Original source from `dr15` user on stackoverflow [How can I convert the .cpbitmap images to .png or common images type ?](https://stackoverflow.com/a/48158807/1293612).
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 
