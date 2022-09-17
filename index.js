@@ -8,8 +8,6 @@ const convertCpbitmapToPng = async (inpFileName, outFileName) => {
     const width = cpbmp.readInt32LE(cpbmp.length - 4 * 5)
     const height = cpbmp.readInt32LE(cpbmp.length - 4 * 4)
 
-    console.log(`Image height: ${height}, width: ${width}`)
-
     const image = await new Jimp(width, height, 0x000000FF)
 
     const calcOffsetInCpbmp = (x, y, width) => {
