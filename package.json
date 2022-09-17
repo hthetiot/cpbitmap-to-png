@@ -17,7 +17,7 @@
     "ios",
     "png"
   ],
-  "main": "cli/main.js",
+  "main": "index.js",
   "preferGlobal": true,
   "bin": {
     "cpbitmap-to-png": "./cli/main.js"
