@@ -11,7 +11,7 @@ const convertCpbitmapToPng = async (inpFileName, outFileName) => {
     const image = await new Jimp(width, height, 0x000000FF)
 
     const calcOffsetInCpbmp = (x, y, width) => {
-        const lineSize = Math.ceil(width / 8) * 8
+        const lineSize = Math.ceil(width / 16) * 16
         return x * 4 + y * lineSize * 4
     }
 
