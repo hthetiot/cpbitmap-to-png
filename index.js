@@ -35,7 +35,7 @@ const convertCpbitmapToPng = async (inpFileName, outFileName) => {
         }
     }
 
-    await image.write(outFileName)
+    await image.writeAsync(outFileName)
 }
 
 module.exports = convertCpbitmapToPng
