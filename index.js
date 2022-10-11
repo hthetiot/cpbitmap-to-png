@@ -42,7 +42,7 @@ const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) =
         }
     }
 
-    await image.write(outFileName)
+    await image.writeAsync(outFileName)
 }
 
 module.exports = convertCpbitmapToPng
