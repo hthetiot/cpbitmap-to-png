@@ -4,7 +4,7 @@ const Jimp = require('jimp')
 
 const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) => {
     let offset = 16;
-    if (iOSVersion < 10 ) {
+    if (iOSVersion < 10) {
         offset = 4;
     } else if (iOSVersion < 12) {
         offset = 8;
