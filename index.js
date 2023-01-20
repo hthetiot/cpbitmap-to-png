@@ -4,7 +4,7 @@ const Jimp = require('jimp')
 
 const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) => {
     let offset = 16;
-    if (iOSVersion < 10 ) {
+    if (iOSVersion < 10) {
         offset = 4;
     } else if (iOSVersion < 12) {
         offset = 8;
@@ -15,7 +15,7 @@ const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) =
     const width = cpbmp.readInt32LE(cpbmp.length - 4 * 5)
     const height = cpbmp.readInt32LE(cpbmp.length - 4 * 4)
 
-    const image = await new Jimp(width, height, 0x000000FF)
+    const image = new Jimp(width, height, 0x000000FF)
 
     const calcOffsetInCpbmp = (x, y, width) => {
         const lineSize = Math.ceil(width / offset) * offset
