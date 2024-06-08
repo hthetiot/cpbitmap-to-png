@@ -23,7 +23,7 @@
     "cpbitmap-to-png": "./cli/main.js"
   },
   "dependencies": {
-    "jimp": "^0.16.1"
+    "jimp": "^0.22.12"
   },
   "devDependencies": {
     "eslint": "^7.32.0"
