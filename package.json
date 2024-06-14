@@ -20,7 +20,7 @@
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
-    "cpbitmap-to-png": "./cli/main.js"
+    "cpbitmap-to-png": "cli/main.js"
   },
   "dependencies": {
     "jimp": "^0.22.12"
