@@ -1,6 +1,6 @@
 {
   "name": "cpbitmap-to-png",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI to convert cpbitmap image file to png format.",
   "author": "Harold Thetiot <hthetiot@gmail.com> (https://github.com/hthetiot)",
   "license": "MIT",
