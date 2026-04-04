@@ -1,6 +1,5 @@
 const fs = require('fs')
-const util = require('util')
-const Jimp = require('jimp')
+const sharp = require('sharp')
 
 const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) => {
     let offset = 16;
@@ -10,12 +9,10 @@ const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) =
         offset = 8;
     }
 
-    const readFile = util.promisify(fs.readFile)
-    const cpbmp = await readFile(inpFileName)
+    const cpbmp = await fs.promises.readFile(inpFileName)
     const width = cpbmp.readInt32LE(cpbmp.length - 4 * 5)
     const height = cpbmp.readInt32LE(cpbmp.length - 4 * 4)
-
-    const image = new Jimp(width, height, 0x000000FF)
+    const image = Buffer.alloc(width * height * 4)
 
     const calcOffsetInCpbmp = (x, y, width) => {
         const lineSize = Math.ceil(width / offset) * offset
@@ -26,25 +23,27 @@ const convertCpbitmapToPng = async (inpFileName, outFileName, iOSVersion = 12) =
         return x * 4 + y * width * 4
     }
 
-    const swapRBColors = (c) => {
-        const r = c & 0xFF
-        const b = (c & 0xFF0000) >> 16
-        c &= 0xFF00FF00
-        c |= r << 16
-        c |= b
-        return c
-    }
-
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
-            const color = cpbmp.readInt32LE(calcOffsetInCpbmp(x, y, width))
-            image.bitmap.data.writeInt32LE(swapRBColors(color), calcOffsetInImage(x, y, width))
+            const sourceOffset = calcOffsetInCpbmp(x, y, width)
+            const targetOffset = calcOffsetInImage(x, y, width)
+
+            image[targetOffset] = cpbmp[sourceOffset + 2]
+            image[targetOffset + 1] = cpbmp[sourceOffset + 1]
+            image[targetOffset + 2] = cpbmp[sourceOffset]
+            image[targetOffset + 3] = cpbmp[sourceOffset + 3]
         }
     }
 
-    return await image.writeAsync(outFileName).then(() => {
-        return outFileName
-    })
+    await sharp(image, {
+        raw: {
+            width,
+            height,
+            channels: 4
+        }
+    }).png().toFile(outFileName)
+
+    return outFileName
 }
 
 module.exports = convertCpbitmapToPng
