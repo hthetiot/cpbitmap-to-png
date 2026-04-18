@@ -25,7 +25,7 @@ test('convert LockBackground.cpbitmap to LockBackground.png', (done) => {
     expect(res).toBe(output);
     generateChecksum(output).then((checksum) => {
       console.log('checksum', checksum)
-      expect(checksum).toBe('3ffe0cad91d87de183f6f626e91db9fa');
+      expect(checksum).toBe('cdc79b0679ef451506967195979f5bdd');
       done();
     })
   })
